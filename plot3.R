@@ -6,6 +6,6 @@ png(file="plot3.png")
 type.NEI<-ddply(subset(NEI,fips=="24510"), .(year,type), summarize, Emissions=sum(Emissions))
 qplot(x=year,y=Emissions, data=type.NEI, geom="bar", stat="identity", facets=.~type, 
   ylab=expression(paste("Amount of ", PM[2.5], " emitted, in tons")), 
-  xlab="Year", main=expression(paste("Total ",PM[2.5]," Emission by Type of Source in Baltimore City, Maryland")),
+  xlab="Year", main=expression(paste(PM[2.5]," Emission by Type of Source in Baltimore City, Maryland")),
   ylim=c(0,2500))
 dev.off()
